@@ -13,3 +13,13 @@ def tpfz():
     except:
         print("2")
 tpfz()
+
+
+
+
+
+
+
+def nanzhan():
+    for name in img1:
+        

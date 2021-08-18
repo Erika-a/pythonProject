@@ -6,7 +6,7 @@ import cv2
 
 
 def cjwj():
-    floder = 'C:\\Users\\PC\\Desktop\\wenjian1\\'
+    floder = 'C:\\Users\\24452\\Desktop\\wenjian1\\'
 
     if not os.path.exists(floder):
         os.makedirs(floder)
@@ -18,7 +18,7 @@ def cjwj():
         file.close()
 
 def cjwj2():
-    floder = 'C:\\Users\\PC\\Desktop\\wenjian2\\'
+    floder = 'C:\\Users\\24452\\Desktop\\wenjian2\\'
 
     if not os.path.exists(floder):
         os.makedirs(floder)
@@ -30,8 +30,8 @@ def cjwj2():
 # 文件复制
 
 def wjfz():
-    oldseg_path = "C:\\Users\\PC\\Desktop\\wenjian1\\"
-    newseg_path = "C:\\Users\\PC\\Desktop\\wenjian2\\"
+    oldseg_path = "C:\\Users\\24452\\Desktop\\wenjian1\\"
+    newseg_path = "C:\\Users\\24452\\Desktop\\wenjian2\\"
 
     for i in range(10):
         no = str(1+i)
@@ -59,7 +59,27 @@ def jb():
             newname=u"d:\\copy\\newname"+aa+"."+bb
             shutil.copyfile(oldname,newname)
 
+
+
+
+
 def fztp():
+    alllist = os.listdir(u"C:\\Users\\24452\\Desktop\\wenjian1")
+
+    for i in alllist:
+        aa,bb=i.split(".")
+        if 'jpg' in bb:
+            oldname = u"C:\\Users\\24452\\Desktop\\wenjian1\\" + aa + "." + bb
+            newname = u"C:\\Users\\24452\\Desktop\\wenjian2\\" + aa + "." + bb
+            shutil.copyfile(oldname,newname)
+        elif 'psd' in bb:
+            print("跳过"+bb+"文件")
+    print("复制"+bb+"完成")
+
+fztp()
+
+
+def fztp2():
     alllist = os.listdir(u"C:\\Users\PC\\Desktop\\wenjian1")
 
     for i in alllist:

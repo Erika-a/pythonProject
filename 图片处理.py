@@ -12,14 +12,14 @@ def tpfz():
             print("1")
     except:
         print("2")
-tpfz()
-
-
-
+    return(img1)
 
 
 
 
 def nanzhan():
-    for name in img1:
+    t1 = tpfz()
+    print(t1)
+
         
+nanzhan()

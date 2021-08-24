@@ -1,25 +1,17 @@
 import os
 import shutil
+from PIL import Image
 
+path = os.path.join("C:\\Users\\PC\\Desktop\\wenjian1\\","0537GXQA01B002AJ301T101.png")
+img = Image.open(path)
 
-def tpfz():
-    img1 = open('name.py')
-    img2 = open('w.py')
-    try:
-        if img1 == img2:
-            shutil.copyfile(img2,)
-        else:
-            print("1")
-    except:
-        print("2")
-    return(img1)
+print(img.format)
+print(img.size)
 
 
 
 
-def nanzhan():
-    t1 = tpfz()
-    print(t1)
 
-        
-nanzhan()
+
+
+

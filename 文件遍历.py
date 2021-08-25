@@ -35,8 +35,8 @@ def getfiles2():
 
 #遍历文件移动
 def sl1():
-    path1 = r'E:\\Zhangjiakou_20200907\\06_MAX\\所有地块20210311\\OSGB\\0823\\3dt\\'
-    path2 = r'E:\\Zhangjiakou_20200907\\06_MAX\\所有地块20210311\\OSGB\\0823\\3dt\\'
+    path1 = r'E:\\Zhangjiakou_20200907\\06_MAX\\所有地块20210311\\OSGB\\0824\\'
+    path2 = r'E:\\Zhangjiakou_20200907\\06_MAX\\所有地块20210311\\OSGB\\0825\\3dt\\'
     for filepath,dirname,filenames in os.walk(path1):
         for filename in filenames:
             if '.3dt' in filename:
@@ -60,7 +60,7 @@ def sl1():
 
 def sl2():
     path1 = r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\高铁新城中间建筑'
-    path2 = r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0823\高铁新城中间建筑\images'
+    path2 = r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0824\高铁新城中间建筑\images'
     alllist = os.listdir(path1)
     for i in alllist:
         if '.tif' in i:
@@ -68,6 +68,7 @@ def sl2():
             new = os.path.join(path2,i)
             shutil.copyfile(old,new)
             print(i,"复制完成")
+
 
 
 def sl3():
@@ -134,4 +135,3 @@ def sl5():
 
     print("\n文件复制完成\n")
 
-sl5()

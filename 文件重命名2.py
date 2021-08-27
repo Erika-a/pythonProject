@@ -23,7 +23,7 @@ def FileRename1():
         print(oldname,"\n-----ok-----\n",newname)
 
 def OpenFile():
-    name = open(r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0827\name2-1.txt','r')
+    name = open(r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0827\name1.txt','r')
     names = name.read()
     namelist = names.split()
 
@@ -42,7 +42,7 @@ def FileRename2():
             time.sleep(5)
             try:
 
-                newname = (os.path.join(path2,OpenFile()[p]) + '.3dt')
+                newname = (os.path.join(path2,OpenFile()[p]))
                 shutil.move(oldname,newname)
                 print(OpenFile()[p],"\n-----ok-----")
                 p = p + 1
@@ -51,12 +51,12 @@ def FileRename2():
                 cout1 = cout1 + 1
             except:
                 print("文件正在使用")
-        if cout1 == 37:
+        if cout1 == 10:
             break
     print("-----ok-----")
 
 def GetNames():
-    list = os.listdir(r'E:\Zhangjiakou_20200907\06_MAX\shapan\AirCityExplorer_hqf\Content\京张铁路弃线改造')
+    list = os.listdir(r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0827\shapan\Cu')
     namefile = open(r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0827\name1.txt','w')
 
     for i in list:
@@ -64,6 +64,23 @@ def GetNames():
 
 
     print(list)
+
+def findnamedel():
+    delpath = r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0827\shapan'
+    namefile = open(r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0827\name1.txt','r')
+    alllist = namefile.read()
+    filelist = os.listdir(delpath)
+    cout1 = 0
+    for i in filelist:
+        if i in alllist:
+            delpath1 = os.path.join(delpath,i)
+            os.remove(delpath1)
+            cout1 = cout1 + 1
+            print(i+'-----ok')
+
+    print(cout1,"个文件已删除")
+
+
 
 def TxtDel():
 
@@ -95,6 +112,14 @@ def FindFile():
 
     print("错误文件已复制")
 
+def finddel():
+    alllist = os.listdir(path2)
+    for i in alllist:
+        Path = os.path.join(path2, i)
+        size = os.stat(Path).st_size
+        if size > 30000000:
+            os.remove(Path)
+    print("错误文件已复制")
 
 if __name__ == '__main__':
-    FindFile()
+    FileRename2()

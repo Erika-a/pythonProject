@@ -3,9 +3,18 @@ import shutil
 import time
 
 path1 = r'C:\Users\PC\Desktop\WindowsNoEditor\AirCityExplorer\Content\Paks\AirCityExplorer-WindowsNoEditor.pak'
-path2 = r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0827\shapan'
+path2 = r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0908\shapan'
 oldname = path1
 # newname = os.path.join(path2,'yhhhhh.3dt')
+
+def main():
+    print("文件重命名")
+    print("1")
+    choese1 = input("选择功能")
+    if choese1 == 1:
+        print("单文件改名")
+        FileRename1()
+
 
 
 
@@ -14,6 +23,8 @@ oldname = path1
 def FileRename1():
     if not os.path.exists(path1):
         print("路径下没有文件")
+    if not os.path.exists(path2):
+        os.makedirs(path2)
 
     if os.path.exists(path1):
         text1 = input("输入文件名字:")
@@ -22,8 +33,9 @@ def FileRename1():
         shutil.move(oldname,newname)
         print(oldname,"\n-----ok-----\n",newname)
 
+
 def OpenFile():
-    name = open(r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0827\name1.txt','r')
+    name = open(r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0908\name1.txt','r',encoding='utf-8')
     names = name.read()
     namelist = names.split()
 
@@ -42,7 +54,8 @@ def FileRename2():
             time.sleep(5)
             try:
 
-                newname = (os.path.join(path2,OpenFile()[p]))
+                newname = (os.path.join(path2,OpenFile()[p]) + '.3dt')
+                print(newname)
                 shutil.move(oldname,newname)
                 print(OpenFile()[p],"\n-----ok-----")
                 p = p + 1
@@ -51,13 +64,13 @@ def FileRename2():
                 cout1 = cout1 + 1
             except:
                 print("文件正在使用")
-        if cout1 == 10:
+        if cout1 == 9:
             break
     print("-----ok-----")
 
 def GetNames():
-    list = os.listdir(r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0827\shapan\Cu')
-    namefile = open(r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0827\name1.txt','w')
+    list = os.listdir(r'E:\Zhangjiakou_20200907\06_MAX\shapan\AirCityExplorer\Content\SPjiaohu1\2_CSKTZS')
+    namefile = open(r'E:\Zhangjiakou_20200907\06_MAX\所有地块20210311\OSGB\0908\name1.txt','w')
 
     for i in list:
         namefile.write(i+'\n')
@@ -122,4 +135,4 @@ def finddel():
     print("错误文件已复制")
 
 if __name__ == '__main__':
-    FileRename2()
+    main()

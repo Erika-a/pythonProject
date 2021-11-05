@@ -11,7 +11,7 @@ def cjsj(file):
         time.ctime(os.path.getmtime(file))#最近修改时间
     ]
 
-filename = r'C:\Users\24452\Desktop\wenjian2'
+filename = r'E:\A'
 
 filetime = time.localtime(os.path.getmtime(filename))
 

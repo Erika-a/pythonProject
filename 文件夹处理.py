@@ -87,6 +87,41 @@ def excel():
     # 写入信息
     wb.close()
 
+def notdir(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+        print("{0}\n创建完成".format(path))
+
+
+def cjwjj():
+    # p = input("输入路径自动创建mesh,texture,material:\n")
+    p = r'E:\Zhangjiakou_20200907\06_MAX\shapan\AirCityExplorer\Content\SPjiaohu1'
+    t = input("输入文件夹名：\n")
+    path1 = os.path.join(p,t)
+    path2 = os.path.join(p,t + '\\Mesh')
+    path3 = os.path.join(p, t + '\\Texture')
+    path4 = os.path.join(p, t + '\\Material')
+    # if not os.path.exists(path1):
+    #     os.makedirs(path1)
+    #     print("{0}\n创建完成".format(path1))
+    # if not os.path.exists(path2):
+    #     os.makedirs(path2)
+    #     print("{0}\n创建完成".format(path2))
+    # if not os.path.exists(path3):
+    #     os.makedirs(path3)
+    #     print("{0}\n创建完成".format(path3))
+    # if not os.path.exists(path4):
+    #     os.makedirs(path4)
+    #     print("{0}\n创建完成".format(path4))
+    notdir(path1)
+    notdir(path2)
+    notdir(path3)
+    notdir(path4)
+
+
+if __name__ == '__main__':
+    cjwjj()
+
 
 
 

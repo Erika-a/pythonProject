@@ -59,4 +59,4 @@ def chik2(img):
 
 
 if __name__ == '__main__':
-    chik(1)
+    shili1()

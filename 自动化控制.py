@@ -21,8 +21,8 @@ width,height = pyautogui.size()
 
 #获取鼠标位置
 
-po = pyautogui.position()
-print(po)
+# po = pyautogui.position()
+# print(po)
 
 #点击鼠标
 
@@ -52,8 +52,8 @@ print(po)
 
 #截图
 
-im = pyautogui.screenshot()
-
+# im = pyautogui.screenshot()
+#
 #
 # print(im.getpixel((50,200)))
 #
@@ -63,17 +63,20 @@ im = pyautogui.screenshot()
 
 #图像识别
 
-# t = pyautogui.locateOnScreen('Image/t.png')             #找图返回坐标
-# r = list(pyautogui.locateAllOnScreen('Image/t.png'))    #找全部图
+# t = pyautogui.locateOnScreen(r'C:\Users\PC\Desktop\1.jpg')             #找图返回坐标
+# r = list(pyautogui.locateAllOnScreen(r'C:\Users\PC\Desktop\1.jpg'))    #找全部图
 # y = pyautogui.center(t)                                 #返回图片的中心坐标
+# print(t)
+# print(r)
+# print(y)
 # pyautogui.click(y)
 
 #键盘控制
 
-pyautogui.typewrite('hello,world',0.25)         #键盘按键输入
-pyautogui.keyDown('f1')                         #按下键盘
-pyautogui.keyUp('f1')                           #弹起键盘
-pyautogui.hotkey('ctrl','c')                    #按键组合
+# pyautogui.typewrite('hello,world',0.25)         #键盘按键输入
+# pyautogui.keyDown('f1')                         #按下键盘
+# pyautogui.keyUp('f1')                           #弹起键盘
+# pyautogui.hotkey('ctrl','c')                    #按键组合
 
 '''
 moveTo（x，y）将鼠标移动到指定的x、y坐标。

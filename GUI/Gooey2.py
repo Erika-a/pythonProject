@@ -21,15 +21,16 @@ def main():
 
     subs = parser.add_subparsers(help='commands', dest='command')
 
+
+    siege_parser = subs.add_parser('pak文件重命名为3dt')
+    siege_parser.add_argument("pakpath",metavar='pak路径',help='请输入pak路径',default=r'E:\UE_Project\pak\WindowsNoEditor\AirCityExplorer\Content\Paks\AirCityExplorer-WindowsNoEditor.pak')
+    siege_parser.add_argument("dtpath", metavar='3dt路径',help='请输入3dt路径',default=r'E:\OSGB\{0}\3dt'.format(gettime()))
+    siege_parser.add_argument("name", metavar='命名名称',help='请输入文件名', default='3dt')
+
     my_parser = subs.add_parser('3DT批量转换')
     my_parser.add_argument("connect", metavar='运行环境',help="请选择开发环境",choices=['dev环境','staging环境'], default='dev环境')
     my_parser.add_argument("device_type",metavar='设备类型',help="请选择设备类型",choices=['H1','H3'],default='H1')
     my_parser.add_argument("serialNumber", metavar='设备SN号',default='LKVC19060047',help='多个请用逗号或空格隔开')
-
-    siege_parser = subs.add_parser('pak文件重命名为3dt')
-    siege_parser.add_argument("pakpath",help='请输入pak路径',default=r'E:\UE_Project\pak\WindowsNoEditor\AirCityExplorer\Content\Paks\AirCityExplorer-WindowsNoEditor.pak')
-    siege_parser.add_argument("dtpath", help='请输入3dt路径',default=r'E:\OSGB\{0}\3dt'.format(gettime()))
-    siege_parser.add_argument("name", help='请输入文件名', default='3dt')
 
 
     # siege_parser = subs.add_parser('pak文件重命名为3dt3')
